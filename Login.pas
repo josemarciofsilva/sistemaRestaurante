@@ -4,10 +4,16 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.Buttons;
 
 type
-  TForm1 = class(TForm)
+  TfrmLogin = class(TForm)
+    imgBackground: TImage;
+    Image1: TImage;
+    txtnome: TEdit;
+    txtsenha: TEdit;
+    btnLogin: TSpeedButton;
   private
     { Private declarations }
   public
@@ -15,7 +21,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmLogin: TfrmLogin;
 
 implementation
 

@@ -2,13 +2,13 @@ program RestaurantSystem;
 
 uses
   Vcl.Forms,
-  Login in 'Login.pas' {Form1};
+  Login in 'Login.pas' {frmLogin};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmLogin, frmLogin);
   Application.Run;
 end.
