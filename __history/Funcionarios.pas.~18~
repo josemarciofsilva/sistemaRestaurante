@@ -1,0 +1,150 @@
+unit Funcionarios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.Mask;
+
+type
+  TfrmFuncionarios = class(TForm)
+    imgBackground: TImage;
+    lblBuscar: TLabel;
+    rbNome: TRadioButton;
+    rbCPF: TRadioButton;
+    txtNomeBuscar: TEdit;
+    lblNmeFuncionario: TLabel;
+    txtNome: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    txtEndereco: TEdit;
+    Label5: TLabel;
+    txtBairro: TEdit;
+    Label7: TLabel;
+    txtNumero: TEdit;
+    Label8: TLabel;
+    txtEmail: TEdit;
+    Label9: TLabel;
+    comboCargo: TComboBox;
+    Label10: TLabel;
+    Label6: TLabel;
+    txtCidade: TEdit;
+    Label11: TLabel;
+    comboEstado: TComboBox;
+    grid: TDBGrid;
+    btnAdicionar: TSpeedButton;
+    btnSalvar: TSpeedButton;
+    btnEditar: TSpeedButton;
+    btnExcluir: TSpeedButton;
+    lblAdicionar: TLabel;
+    lblSalvar: TLabel;
+    lblEditar: TLabel;
+    lblExcluir: TLabel;
+    txtCPF: TMaskEdit;
+    txtCelular: TMaskEdit;
+    txtTelefone: TMaskEdit;
+    txtCEP: TMaskEdit;
+    txtCPFBuscar: TMaskEdit;
+    procedure rbCPFClick(Sender: TObject);
+    procedure rbNomeClick(Sender: TObject);
+    procedure btnAdicionarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFuncionarios: TfrmFuncionarios;
+
+implementation
+
+{$R *.dfm}
+
+procedure LimparCampos();
+begin
+  With frmFuncionarios do
+    begin
+      txtNome.Text := '';
+      txtCPF.Text := '';
+      txtCelular.Text := '';
+      txtTelefone.Text := '';
+      txtEndereco.Text := '';
+      txtNumero.Text := '';
+      txtBairro.Text := '';
+      txtCidade.Text := '';
+      txtCEP.Text := '';
+      txtEmail.Text := '';
+    end;
+end;
+
+procedure HabilitarCampos();
+begin
+  With frmFuncionarios do
+    begin
+      txtNome.Enabled := true;
+      txtCPF.Enabled := true;
+      txtCelular.Enabled := true;
+      txtTelefone.Enabled := true;
+      txtEndereco.Enabled := true;
+      txtNumero.Enabled := true;
+      txtBairro.Enabled := true;
+      comboEstado.Enabled := true;
+      txtCidade.Enabled := true;
+      txtCEP.Enabled := true;
+      txtEmail.Enabled := true;
+      comboCargo.Enabled := true;
+      LimparCampos();
+    end;
+end;
+
+procedure DesabilitarCampos();
+begin
+  With frmFuncionarios do
+    begin
+      txtNome.Enabled := false;
+      txtCPF.Enabled := false;
+      txtCelular.Enabled := false;
+      txtTelefone.Enabled := false;
+      txtEndereco.Enabled := false;
+      txtNumero.Enabled := false;
+      txtBairro.Enabled := false;
+      comboEstado.Enabled := false;
+      txtCidade.Enabled := false;
+      txtCEP.Enabled := false;
+      txtEmail.Enabled := false;
+      comboCargo.Enabled := false;
+    end;
+end;
+
+procedure TfrmFuncionarios.btnAdicionarClick(Sender: TObject);
+begin
+  HabilitarCampos();
+  lblSalvar.Enabled := true;
+  btnSalvar.Enabled := true;
+  txtNome.Focused;
+end;
+
+procedure TfrmFuncionarios.rbCPFClick(Sender: TObject);
+begin
+  if rbCPF.Checked = true then
+    txtNomeBuscar.Text := '';
+    txtNomeBuscar.Visible := false;
+    txtCPFBuscar.Text := '';
+    txtCPFBuscar.Visible := true;
+end;
+
+procedure TfrmFuncionarios.rbNomeClick(Sender: TObject);
+begin
+  if rbNome.Checked = true then
+    txtNomeBuscar.Text := '';
+    txtNomeBuscar.Visible := true;
+    txtCPFBuscar.Text := '';
+    txtCPFBuscar.Visible := false;
+
+end;
+
+end.

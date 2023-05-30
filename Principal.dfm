@@ -36062,6 +36062,7 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Cadastros'
       object Funcionrios1: TMenuItem
         Caption = 'Funcion'#225'rios'
+        OnClick = Funcionrios1Click
       end
       object Fornecedores1: TMenuItem
         Caption = 'Fornecedores'
@@ -36071,6 +36072,9 @@ object frmPrincipal: TfrmPrincipal
       end
       object Pratos1: TMenuItem
         Caption = 'Pratos'
+      end
+      object Cargos1: TMenuItem
+        Caption = 'Cargos'
       end
     end
     object Produtos1: TMenuItem

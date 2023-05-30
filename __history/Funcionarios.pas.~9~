@@ -1,0 +1,64 @@
+unit Funcionarios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons;
+
+type
+  TfrmFuncionarios = class(TForm)
+    imgBackground: TImage;
+    lblBuscar: TLabel;
+    rbNome: TRadioButton;
+    rbCPF: TRadioButton;
+    txtNomeBuscar: TEdit;
+    txtCpfBuscar: TEdit;
+    lblNmeFuncionario: TLabel;
+    txtNome: TEdit;
+    Label1: TLabel;
+    txtCPF: TEdit;
+    Label2: TLabel;
+    txtCelular: TEdit;
+    Label3: TLabel;
+    txtTelefone: TEdit;
+    Label4: TLabel;
+    txtEndereco: TEdit;
+    Label5: TLabel;
+    txtBairro: TEdit;
+    Label7: TLabel;
+    txtNumero: TEdit;
+    Label8: TLabel;
+    txtEmail: TEdit;
+    Label9: TLabel;
+    comboCargo: TComboBox;
+    Label10: TLabel;
+    txtCEP: TEdit;
+    Label6: TLabel;
+    txtCidade: TEdit;
+    Label11: TLabel;
+    comboEstado: TComboBox;
+    grid: TDBGrid;
+    btnProdutos: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFuncionarios: TfrmFuncionarios;
+
+implementation
+
+{$R *.dfm}
+
+end.

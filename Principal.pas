@@ -38,6 +38,8 @@ type
     btnReserva: TSpeedButton;
     btnRelatorios: TSpeedButton;
     Pratos1: TMenuItem;
+    Cargos1: TMenuItem;
+    procedure Funcionrios1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,5 +52,13 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Funcionarios;
+
+procedure TfrmPrincipal.Funcionrios1Click(Sender: TObject);
+begin
+  frmFuncionarios := TfrmFuncionarios.Create(self);
+  frmFuncionarios.ShowModal;
+end;
 
 end.
