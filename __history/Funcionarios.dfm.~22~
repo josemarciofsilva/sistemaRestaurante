@@ -33273,8 +33273,8 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
   end
-  object btnProdutos: TSpeedButton
-    Left = 466
+  object btnAdicionar: TSpeedButton
+    Left = 567
     Top = 592
     Width = 75
     Height = 75
@@ -33810,12 +33810,14 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnAdicionarClick
   end
-  object SpeedButton1: TSpeedButton
-    Left = 654
+  object btnSalvar: TSpeedButton
+    Left = 751
     Top = 592
     Width = 75
     Height = 75
+    Enabled = False
     Flat = True
     Glyph.Data = {
       3A420000424D3A42000000000000360000002800000041000000410000000100
@@ -34349,11 +34351,12 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
   end
-  object SpeedButton2: TSpeedButton
-    Left = 857
+  object btnEditar: TSpeedButton
+    Left = 954
     Top = 592
     Width = 75
     Height = 75
+    Enabled = False
     Flat = True
     Glyph.Data = {
       3A420000424D3A42000000000000360000002800000041000000410000000100
@@ -34887,11 +34890,12 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
   end
-  object SpeedButton3: TSpeedButton
-    Left = 1066
+  object btnExcluir: TSpeedButton
+    Left = 1163
     Top = 592
     Width = 75
     Height = 75
+    Enabled = False
     Flat = True
     Glyph.Data = {
       3A420000424D3A42000000000000360000002800000041000000410000000100
@@ -35425,8 +35429,8 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
   end
-  object Label12: TLabel
-    Left = 458
+  object lblAdicionar: TLabel
+    Left = 555
     Top = 664
     Width = 87
     Height = 25
@@ -35438,12 +35442,13 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
   end
-  object Label13: TLabel
-    Left = 664
+  object lblSalvar: TLabel
+    Left = 761
     Top = 664
     Width = 57
     Height = 25
     Caption = 'Salvar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -35451,12 +35456,13 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
   end
-  object Label14: TLabel
-    Left = 872
+  object lblEditar: TLabel
+    Left = 969
     Top = 664
     Width = 55
     Height = 25
     Caption = 'Editar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -35464,12 +35470,13 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
   end
-  object Label15: TLabel
-    Left = 1075
+  object lblExcluir: TLabel
+    Left = 1172
     Top = 664
     Width = 62
     Height = 25
     Caption = 'Excluir'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -35483,13 +35490,16 @@ object frmFuncionarios: TfrmFuncionarios
     Width = 73
     Height = 17
     Caption = 'Nome'
+    Checked = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 0
+    TabOrder = 12
+    TabStop = True
+    OnClick = rbNomeClick
   end
   object rbCPF: TRadioButton
     Left = 928
@@ -35503,7 +35513,8 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 13
+    OnClick = rbCPFClick
   end
   object txtNomeBuscar: TEdit
     Left = 992
@@ -35516,28 +35527,28 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
-    Text = 'nome'
-  end
-  object txtCpfBuscar: TEdit
-    Left = 992
-    Top = 56
-    Width = 353
-    Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    Text = 'cpf'
+    TabOrder = 15
   end
   object txtNome: TEdit
     Left = 151
     Top = 109
     Width = 474
     Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object txtEndereco: TEdit
+    Left = 150
+    Top = 173
+    Width = 315
+    Height = 31
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -35545,27 +35556,13 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
     TabOrder = 4
-    Text = 'Jose Marcio Ferreira da Silva Sauro Santos Nascimento'
   end
-  object txtCPF: TEdit
-    Left = 696
-    Top = 109
-    Width = 145
+  object txtBairro: TEdit
+    Left = 691
+    Top = 173
+    Width = 501
     Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 5
-    Text = '135.969.468-40'
-  end
-  object txtCelular: TEdit
-    Left = 927
-    Top = 109
-    Width = 162
-    Height = 31
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -35573,55 +35570,27 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
     TabOrder = 6
-    Text = '(11) 94893-2064'
-  end
-  object txtTelefone: TEdit
-    Left = 1199
-    Top = 109
-    Width = 146
-    Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 7
-    Text = '(11) 4678-1840'
-  end
-  object txtEndereco: TEdit
-    Left = 150
-    Top = 173
-    Width = 315
-    Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 8
-    Text = 'Rua Jo'#227'o Tonalezzi da Silva Sauro,'
-  end
-  object txtBairro: TEdit
-    Left = 691
-    Top = 173
-    Width = 501
-    Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 9
-    Text = 'Jardim Semin'#225'rio do Castelo Clube'
   end
   object txtNumero: TEdit
     Left = 512
     Top = 173
     Width = 111
     Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+  end
+  object txtEmail: TEdit
+    Left = 616
+    Top = 229
+    Width = 404
+    Height = 31
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -35629,13 +35598,13 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
     TabOrder = 10
-    Text = '1.999-lado A'
   end
-  object txtEmail: TEdit
-    Left = 616
+  object comboCargo: TComboBox
+    Left = 1088
     Top = 229
-    Width = 404
+    Width = 257
     Height = 31
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -35643,74 +35612,131 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
     TabOrder = 11
-    Text = 'jmarciosilvasaurodajeremias@exchange.com.br'
-  end
-  object comboCargo: TComboBox
-    Left = 1088
-    Top = 229
-    Width = 257
-    Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 12
-    Text = 'Funcionario do M'#234's de Abril'
-  end
-  object txtCEP: TEdit
-    Left = 446
-    Top = 229
-    Width = 99
-    Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 13
-    Text = '08505-250'
   end
   object txtCidade: TEdit
     Left = 150
     Top = 229
     Width = 241
     Height = 31
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 14
-    Text = 'Ferraz de Vasconcelos LALALA'
+    TabOrder = 8
   end
   object comboEstado: TComboBox
     Left = 1277
     Top = 173
     Width = 68
     Height = 31
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 15
-    Text = 'Funcionario do M'#234's de Abril'
+    TabOrder = 7
   end
   object grid: TDBGrid
     Left = 32
     Top = 304
     Width = 1337
     Height = 265
-    TabOrder = 16
+    TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = gridCellClick
+  end
+  object txtCPF: TMaskEdit
+    Left = 692
+    Top = 109
+    Width = 149
+    Height = 31
+    Enabled = False
+    EditMask = '000\.000\.000\-00;1;_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 14
+    ParentFont = False
+    TabOrder = 1
+    Text = '   .   .   -  '
+  end
+  object txtCelular: TMaskEdit
+    Left = 933
+    Top = 109
+    Width = 146
+    Height = 31
+    Enabled = False
+    EditMask = '!\(99\)00000-0000;1;_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 14
+    ParentFont = False
+    TabOrder = 2
+    Text = '(  )     -    '
+  end
+  object txtTelefone: TMaskEdit
+    Left = 1203
+    Top = 109
+    Width = 142
+    Height = 31
+    Enabled = False
+    EditMask = '!\(99\)0000-0000;1;_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 13
+    ParentFont = False
+    TabOrder = 3
+    Text = '(  )    -    '
+  end
+  object txtCEP: TMaskEdit
+    Left = 447
+    Top = 229
+    Width = 104
+    Height = 31
+    Enabled = False
+    EditMask = '00000\-999;1;_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 9
+    ParentFont = False
+    TabOrder = 9
+    Text = '     -   '
+  end
+  object txtCPFBuscar: TMaskEdit
+    Left = 992
+    Top = 8
+    Width = 149
+    Height = 31
+    EditMask = '000\.000\.000\-00;1;_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 14
+    ParentFont = False
+    TabOrder = 16
+    Text = '   .   .   -  '
+    Visible = False
   end
 end

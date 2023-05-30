@@ -48,14 +48,11 @@ type
     txtTelefone: TMaskEdit;
     txtCEP: TMaskEdit;
     txtCPFBuscar: TMaskEdit;
-    txtCodigo: TEdit;
     procedure rbCPFClick(Sender: TObject);
     procedure rbNomeClick(Sender: TObject);
     procedure btnAdicionarClick(Sender: TObject);
     procedure gridCellClick(Column: TColumn);
     procedure btnSalvarClick(Sender: TObject);
-    procedure btnEditarClick(Sender: TObject);
-    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -103,7 +100,6 @@ begin
       txtEmail.Enabled := true;
       comboCargo.Enabled := true;
       LimparCampos();
-      txtNome.SetFocus;
     end;
 end;
 
@@ -134,68 +130,13 @@ begin
 
 end;
 
-procedure TfrmFuncionarios.btnEditarClick(Sender: TObject);
-begin
-  if (txtNome.Text <> '') and (txtCPF.Text <> '   .   .   -  ') then
-    begin
-      {Editando os dados}
-      MessageDlg('Editado com Sucesso!', TMsgDlgType.mtInformation,
-        mbOKCancel, 0);
-      LimparCampos();
-      DesabilitarCampos();
-      lblSalvar.Enabled := false;
-      btnSalvar.Enabled := false;
-      lblEditar.Enabled := false;
-      btnEditar.Enabled := false;
-      lblExcluir.Enabled := false;
-      btnExcluir.Enabled := false;
-    end
-  else
-    begin
-       MessageDlg('Favor preencher todos os campos!', TMsgDlgType.mtInformation,
-        mbOKCancel, 0);
-    end;
-end;
-
-procedure TfrmFuncionarios.btnExcluirClick(Sender: TObject);
-begin
-  if MessageDlg('Deseja Excluir o registro?', TMsgDlgType.mtConfirmation,
-    [mbYes, mbNo], 0) = mrYes then
-    begin
-      if txtCodigo.Text <> '' then
-        begin
-          {Apagando os dados}
-          MessageDlg('Excluído com Sucesso!', TMsgDlgType.mtInformation,
-            mbOKCancel, 0);
-          LimparCampos();
-          DesabilitarCampos();
-          lblSalvar.Enabled := false;
-          btnSalvar.Enabled := false;
-          lblEditar.Enabled := false;
-          btnEditar.Enabled := false;
-          lblExcluir.Enabled := false;
-          btnExcluir.Enabled := false;
-        end
-      else
-        begin
-           MessageDlg('Selecione um registro para exclusão!', TMsgDlgType.mtInformation,
-            mbOKCancel, 0);
-        end;
-    end
-  else
-    begin
-
-    end;
-end;
-
 procedure TfrmFuncionarios.btnSalvarClick(Sender: TObject);
 begin
-  if (txtNome.Text <> '') and (txtCPF.Text <> '   .   .   -  ') then
+  if (txtNome.Text <> '') and (txtCPF.Text <> '___.___.___-__') then
     begin
       {Salvando os dados}
       MessageDlg('Salvo com Sucesso!', TMsgDlgType.mtInformation,
         mbOKCancel, 0);
-      LimparCampos();
       DesabilitarCampos();
       lblSalvar.Enabled := false;
       btnSalvar.Enabled := false;

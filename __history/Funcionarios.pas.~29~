@@ -51,6 +51,9 @@ type
     procedure rbCPFClick(Sender: TObject);
     procedure rbNomeClick(Sender: TObject);
     procedure btnAdicionarClick(Sender: TObject);
+    procedure gridCellClick(Column: TColumn);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -98,6 +101,7 @@ begin
       txtEmail.Enabled := true;
       comboCargo.Enabled := true;
       LimparCampos();
+      txtNome.SetFocus;
     end;
 end;
 
@@ -123,8 +127,64 @@ end;
 procedure TfrmFuncionarios.btnAdicionarClick(Sender: TObject);
 begin
   HabilitarCampos();
-  lblAdicionar.Enabled := true;
-  btnAdicionar.Enabled := true;
+  lblSalvar.Enabled := true;
+  btnSalvar.Enabled := true;
+
+end;
+
+procedure TfrmFuncionarios.btnEditarClick(Sender: TObject);
+begin
+  if (txtNome.Text <> '') and (txtCPF.Text <> '   .   .   -  ') then
+    begin
+      {Editando os dados}
+      MessageDlg('Editado com Sucesso!', TMsgDlgType.mtInformation,
+        mbOKCancel, 0);
+      LimparCampos();
+      DesabilitarCampos();
+      lblSalvar.Enabled := false;
+      btnSalvar.Enabled := false;
+      lblEditar.Enabled := false;
+      btnEditar.Enabled := false;
+      lblExcluir.Enabled := false;
+      btnExcluir.Enabled := false;
+    end
+  else
+    begin
+       MessageDlg('Favor preencher todos os campos!', TMsgDlgType.mtInformation,
+        mbOKCancel, 0);
+    end;
+end;
+
+procedure TfrmFuncionarios.btnSalvarClick(Sender: TObject);
+begin
+  if (txtNome.Text <> '') and (txtCPF.Text <> '   .   .   -  ') then
+    begin
+      {Salvando os dados}
+      MessageDlg('Salvo com Sucesso!', TMsgDlgType.mtInformation,
+        mbOKCancel, 0);
+      LimparCampos();
+      DesabilitarCampos();
+      lblSalvar.Enabled := false;
+      btnSalvar.Enabled := false;
+      lblEditar.Enabled := false;
+      btnEditar.Enabled := false;
+      lblExcluir.Enabled := false;
+      btnExcluir.Enabled := false;
+    end
+  else
+    begin
+       MessageDlg('Favor preencher todos os campos!', TMsgDlgType.mtInformation,
+        mbOKCancel, 0);
+    end;
+end;
+
+procedure TfrmFuncionarios.gridCellClick(Column: TColumn);
+begin
+   HabilitarCampos();
+   lblEditar.Enabled := true;
+   btnEditar.Enabled := true;
+   lblExcluir.Enabled := true;
+   btnExcluir.Enabled := true;
 end;
 
 procedure TfrmFuncionarios.rbCPFClick(Sender: TObject);

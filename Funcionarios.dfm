@@ -34350,6 +34350,7 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnSalvarClick
   end
   object btnEditar: TSpeedButton
     Left = 954
@@ -34889,6 +34890,7 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnEditarClick
   end
   object btnExcluir: TSpeedButton
     Left = 1163
@@ -35428,6 +35430,7 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnExcluirClick
   end
   object lblAdicionar: TLabel
     Left = 555
@@ -35652,6 +35655,7 @@ object frmFuncionarios: TfrmFuncionarios
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = gridCellClick
   end
   object txtCPF: TMaskEdit
     Left = 692
@@ -35736,6 +35740,22 @@ object frmFuncionarios: TfrmFuncionarios
     ParentFont = False
     TabOrder = 16
     Text = '   .   .   -  '
+    Visible = False
+  end
+  object txtCodigo: TEdit
+    Left = 683
+    Top = 8
+    Width = 55
+    Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 17
+    Text = '2'
     Visible = False
   end
 end
