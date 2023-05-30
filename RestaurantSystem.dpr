@@ -2,7 +2,8 @@ program RestaurantSystem;
 
 uses
   Vcl.Forms,
-  Login in 'Login.pas' {frmLogin};
+  Login in 'Login.pas' {frmLogin},
+  Principal in 'Principal.pas' {frmPrincipal};
 
 {$R *.res}
 

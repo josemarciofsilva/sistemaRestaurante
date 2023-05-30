@@ -10,10 +10,11 @@ uses
 type
   TfrmLogin = class(TForm)
     imgBackground: TImage;
-    Image1: TImage;
-    txtnome: TEdit;
+    imgLogin: TImage;
+    txtusuario: TEdit;
     txtsenha: TEdit;
     btnLogin: TSpeedButton;
+    procedure btnLoginClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,5 +27,28 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Principal;
+
+procedure ChamarLogin();
+begin
+  if (Trim(frmLogin.txtUsuario.Text) <> '') and (Trim(frmLogin.txtSenha.Text) <> '') then
+    begin
+      {Entra Login}
+
+    end
+    else
+    begin
+      MessageDlg('Favor preencher todos os campos!', TMsgDlgType.mtInformation,
+        mbOKCancel, 0);
+    end;
+end;
+
+procedure TfrmLogin.btnLoginClick(Sender: TObject);
+begin
+  ChamarLogin();
+  frmPrincipal := TfrmPrincipal.Create(self);
+  frmPrincipal.ShowModal;
+end;
 
 end.
