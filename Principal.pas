@@ -39,7 +39,11 @@ type
     btnRelatorios: TSpeedButton;
     Pratos1: TMenuItem;
     Cargos1: TMenuItem;
+    NovoPedido2: TMenuItem;
+    StatuddoPedido1: TMenuItem;
     procedure Funcionrios1Click(Sender: TObject);
+    procedure CadastrodeProdutos1Click(Sender: TObject);
+    procedure btnProdutosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,7 +57,19 @@ implementation
 
 {$R *.dfm}
 
-uses Funcionarios;
+uses Funcionarios, Produtos;
+
+procedure TfrmPrincipal.btnProdutosClick(Sender: TObject);
+begin
+  frmProdutos := TfrmProdutos.Create(self);
+  frmProdutos.ShowModal;
+end;
+
+procedure TfrmPrincipal.CadastrodeProdutos1Click(Sender: TObject);
+begin
+  frmProdutos := TfrmProdutos.Create(self);
+  frmProdutos.ShowModal;
+end;
 
 procedure TfrmPrincipal.Funcionrios1Click(Sender: TObject);
 begin

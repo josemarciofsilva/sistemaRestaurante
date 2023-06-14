@@ -33625,6 +33625,7 @@ object frmPrincipal: TfrmPrincipal
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnProdutosClick
   end
   object btnMovimentacoes: TSpeedButton
     Left = 248
@@ -36596,6 +36597,7 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Produtos'
       object CadastrodeProdutos1: TMenuItem
         Caption = 'Cadastro de Produtos'
+        OnClick = CadastrodeProdutos1Click
       end
       object EntradadeProdutos1: TMenuItem
         Caption = 'Entrada de Produtos'
@@ -40723,8 +40725,14 @@ object frmPrincipal: TfrmPrincipal
         FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
         FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
       Caption = 'Pedidos'
+      object NovoPedido2: TMenuItem
+        Caption = 'Novo Pedido'
+      end
       object NovoPedido1: TMenuItem
         Caption = 'Tela de Pedidos'
+      end
+      object StatuddoPedido1: TMenuItem
+        Caption = 'Status do Pedido'
       end
     end
     object Reservas1: TMenuItem
