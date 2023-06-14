@@ -35487,6 +35487,32 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     ParentFont = False
   end
+  object lblUsuario: TLabel
+    Left = 75
+    Top = 288
+    Width = 69
+    Height = 23
+    Caption = 'Usu'#225'rio:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblSenha: TLabel
+    Left = 442
+    Top = 288
+    Width = 60
+    Height = 23
+    Caption = 'Senha:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object rbNome: TRadioButton
     Left = 840
     Top = 15
@@ -35500,7 +35526,7 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 12
+    TabOrder = 14
     TabStop = True
     OnClick = rbNomeClick
   end
@@ -35516,7 +35542,7 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 13
+    TabOrder = 15
     OnClick = rbCPFClick
   end
   object txtNomeBuscar: TEdit
@@ -35530,7 +35556,7 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 15
+    TabOrder = 17
   end
   object txtNome: TEdit
     Left = 151
@@ -35646,10 +35672,10 @@ object frmFuncionarios: TfrmFuncionarios
   end
   object grid: TDBGrid
     Left = 32
-    Top = 304
+    Top = 336
     Width = 1337
-    Height = 265
-    TabOrder = 14
+    Height = 233
+    TabOrder = 16
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -35738,7 +35764,7 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Style = []
     MaxLength = 14
     ParentFont = False
-    TabOrder = 16
+    TabOrder = 18
     Text = '   .   .   -  '
     Visible = False
   end
@@ -35754,8 +35780,37 @@ object frmFuncionarios: TfrmFuncionarios
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 17
+    TabOrder = 19
     Text = '2'
     Visible = False
+  end
+  object txtUsuario: TEdit
+    Left = 150
+    Top = 285
+    Width = 241
+    Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+  end
+  object txtSenha: TEdit
+    Left = 512
+    Top = 285
+    Width = 241
+    Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 13
   end
 end

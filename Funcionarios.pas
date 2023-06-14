@@ -49,6 +49,10 @@ type
     txtCEP: TMaskEdit;
     txtCPFBuscar: TMaskEdit;
     txtCodigo: TEdit;
+    lblUsuario: TLabel;
+    txtUsuario: TEdit;
+    lblSenha: TLabel;
+    txtSenha: TEdit;
     procedure rbCPFClick(Sender: TObject);
     procedure rbNomeClick(Sender: TObject);
     procedure btnAdicionarClick(Sender: TObject);
@@ -101,6 +105,8 @@ begin
       txtCidade.Enabled := true;
       txtCEP.Enabled := true;
       txtEmail.Enabled := true;
+      txtUsuario.Enabled := true;
+      txtSenha.Enabled := true;
       comboCargo.Enabled := true;
       LimparCampos();
       txtNome.SetFocus;
@@ -122,6 +128,8 @@ begin
       txtCidade.Enabled := false;
       txtCEP.Enabled := false;
       txtEmail.Enabled := false;
+      txtUsuario.Enabled := false;
+      txtSenha.Enabled := false;
       comboCargo.Enabled := false;
     end;
 end;

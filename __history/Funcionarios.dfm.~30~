@@ -33817,6 +33817,7 @@ object frmFuncionarios: TfrmFuncionarios
     Top = 592
     Width = 75
     Height = 75
+    Enabled = False
     Flat = True
     Glyph.Data = {
       3A420000424D3A42000000000000360000002800000041000000410000000100
@@ -34349,12 +34350,14 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnSalvarClick
   end
   object btnEditar: TSpeedButton
     Left = 954
     Top = 592
     Width = 75
     Height = 75
+    Enabled = False
     Flat = True
     Glyph.Data = {
       3A420000424D3A42000000000000360000002800000041000000410000000100
@@ -34887,12 +34890,14 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnEditarClick
   end
   object btnExcluir: TSpeedButton
     Left = 1163
     Top = 592
     Width = 75
     Height = 75
+    Enabled = False
     Flat = True
     Glyph.Data = {
       3A420000424D3A42000000000000360000002800000041000000410000000100
@@ -35425,6 +35430,7 @@ object frmFuncionarios: TfrmFuncionarios
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+    OnClick = btnExcluirClick
   end
   object lblAdicionar: TLabel
     Left = 555
@@ -35445,6 +35451,7 @@ object frmFuncionarios: TfrmFuncionarios
     Width = 57
     Height = 25
     Caption = 'Salvar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -35458,6 +35465,7 @@ object frmFuncionarios: TfrmFuncionarios
     Width = 55
     Height = 25
     Caption = 'Editar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -35471,9 +35479,36 @@ object frmFuncionarios: TfrmFuncionarios
     Width = 62
     Height = 25
     Caption = 'Excluir'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblUsuario: TLabel
+    Left = 75
+    Top = 288
+    Width = 69
+    Height = 23
+    Caption = 'Usu'#225'rio:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblSenha: TLabel
+    Left = 442
+    Top = 288
+    Width = 60
+    Height = 23
+    Caption = 'Senha:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -35637,15 +35672,16 @@ object frmFuncionarios: TfrmFuncionarios
   end
   object grid: TDBGrid
     Left = 32
-    Top = 304
+    Top = 336
     Width = 1337
-    Height = 265
+    Height = 233
     TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = gridCellClick
   end
   object txtCPF: TMaskEdit
     Left = 692
@@ -35731,5 +35767,49 @@ object frmFuncionarios: TfrmFuncionarios
     TabOrder = 16
     Text = '   .   .   -  '
     Visible = False
+  end
+  object txtCodigo: TEdit
+    Left = 683
+    Top = 8
+    Width = 55
+    Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 17
+    Text = '2'
+    Visible = False
+  end
+  object txtUsuario: TEdit
+    Left = 150
+    Top = 285
+    Width = 241
+    Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 18
+  end
+  object txtSenha: TEdit
+    Left = 512
+    Top = 285
+    Width = 241
+    Height = 31
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 19
   end
 end
